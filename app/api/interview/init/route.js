@@ -1,6 +1,19 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
+// Create client only when needed, inside the handler
+function getGenAIClient() {
+  const key = process.env.GOOGLE_GEMINI_API_KEY;
+  if (!key) {
+    console.warn('[Interview Init] No API key configured');
+    return null;
+  }
+  try {
+    return new GoogleGenerativeAI(key);
+  } catch (error) {
+    console.error('[Interview Init] Failed to init Gemini:', error?.message);
+    return null;
+  }
+}
 
 // Default responses in case of any issues - with more emotional tone
 const defaultResponses = {

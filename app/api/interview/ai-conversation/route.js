@@ -1,8 +1,22 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { trace } from '@opentelemetry/api';
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
 const tracer = trace.getTracer('watshibo-ai-interview');
+
+// Create client only when needed, inside the handler
+function getGenAIClient() {
+  const key = process.env.GOOGLE_GEMINI_API_KEY;
+  if (!key) {
+    console.warn('[AI Conversation] No API key configured');
+    return null;
+  }
+  try {
+    return new GoogleGenerativeAI(key);
+  } catch (error) {
+    console.error('[AI Conversation] Failed to init Gemini:', error?.message);
+    return null;
+  }
+}
 
 /**
  * Dynamic AI-driven interview conversation with OpenTelemetry tracing
