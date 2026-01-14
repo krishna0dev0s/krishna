@@ -39,8 +39,8 @@ const HeroSection = () => {
 
       {/* PixelBlast Background - Optimized */}
       <div 
-        className="absolute inset-0 -z-10" 
-        style={{ width: '100%', height: '300px', position: 'relative' }}
+        className="absolute inset-0 -z-10 overflow-hidden" 
+        style={{ width: '100%', height: '300px', position: 'relative', top: 0, left: 0 }}
       >
         <PixelBlastOptimized
           variant="circle"

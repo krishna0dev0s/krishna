@@ -5,6 +5,7 @@
   background: linear-gradient(135deg, rgba(0, 122, 255, 0.15) 0%, rgba(138, 43, 226, 0.1) 50%, rgba(0, 122, 255, 0.05) 100%);
   position: relative;
   overflow: hidden;
+  clip-path: inset(0);
 }
 
 .hero-glow {
