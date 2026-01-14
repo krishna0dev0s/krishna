@@ -206,7 +206,6 @@
     transform: translateY(0) scale(1);
   }
 }
-}
 
 .card-polished::before {
   content: '';
