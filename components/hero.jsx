@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import PixelBlastOptimized from "./PixelBlastOptimized";
 import { throttle } from "@/lib/performance-utils";
 import { AdaptiveMotion } from "./adaptive-animation";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   const imageRef = useRef(null);
@@ -31,11 +32,15 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className="w-full pt-8 pb-8 text-white relative overflow-hidden -mt-16">
+    <section className="w-full pt-16 pb-12 md:pt-24 md:pb-16 text-white relative overflow-hidden -mt-16 hero-gradient-bg">
+      {/* Enhanced Gradient Glows */}
+      <div className="hero-glow hero-glow-1"></div>
+      <div className="hero-glow hero-glow-2"></div>
+
       {/* PixelBlast Background - Optimized */}
       <div 
         className="absolute inset-0 -z-10" 
-        style={{ width: '100%', height: '250px', position: 'relative' }}
+        style={{ width: '100%', height: '300px', position: 'relative' }}
       >
         <PixelBlastOptimized
           variant="circle"
@@ -58,59 +63,95 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="space-y-3 md:space-y-4 text-center container mx-auto px-4 relative z-10">
-        {/* Headline with adaptive animations */}
-        <div className="space-y-3 md:space-y-4 hero-content">
-          <AdaptiveMotion 
-            className="hero-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight metallic-text">
-              Welcome to WatshiBo
-              <br />
-              <span className="metallic-blue">
-                Your Ultimate AI-Powered Study Companion
-              </span>
-            </h1>
-          </AdaptiveMotion>
-          
-          <AdaptiveMotion 
-            className="hero-subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <p className="mt-2 md:mt-3 text-lg md:text-xl lg:text-2xl font-medium max-w-3xl mx-auto text-gray-100">
-              Master interviews, craft standout resumes, and tailor cover letters.
-              all powered by intelligent automation.
-            </p>
-          </AdaptiveMotion>
-        </div>
-
-        {/* CTA Buttons with adaptive animations */}
-        <AdaptiveMotion
-          className="flex flex-col sm:flex-row justify-center gap-4 pt-2 md:pt-3 hero-buttons"
+      <div className="space-y-6 md:space-y-8 text-center container mx-auto px-4 relative z-10">
+        {/* Badge */}
+        <AdaptiveMotion 
+          className="hero-content"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full section-badge">
+            <Sparkles className="h-4 w-4" />
+            <span>AI-Powered Career Transformation</span>
+          </div>
+        </AdaptiveMotion>
+
+        {/* Headline with enhanced animations */}
+        <AdaptiveMotion 
+          className="hero-title space-y-3"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight">
+            <span className="hero-title block">Welcome to WatshiBo</span>
+            <span className="text-gradient-primary block mt-2">Your Ultimate AI Career Companion</span>
+          </h1>
+        </AdaptiveMotion>
+          
+        <AdaptiveMotion 
+          className="hero-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <p className="text-lg md:text-xl lg:text-2xl font-medium max-w-4xl mx-auto text-gray-200 leading-relaxed">
+            Master interviews, craft standout resumes, and tailor cover letters with 
+            <span className="text-gradient-accent font-semibold"> intelligent automation</span>. 
+            Your success starts here.
+          </p>
+        </AdaptiveMotion>
+
+        {/* CTA Buttons with enhanced animations */}
+        <AdaptiveMotion
+          className="flex flex-col sm:flex-row justify-center gap-4 pt-4 md:pt-6 hero-buttons"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
           <Button 
             asChild 
             size="lg" 
-            className="px-8 transition-all duration-300 hover:scale-105 hover:shadow-lg will-change-transform"
+            className="btn-primary-enhanced px-8 py-6 text-base gap-2 group"
           >
-            <Link href="/dashboard" prefetch={true}>Get Started</Link>
+            <Link href="/dashboard" prefetch={true}>
+              Get Started Now
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
           <Button 
             asChild 
             size="lg" 
-            className="px-8 transition-all duration-300 hover:scale-105 hover:shadow-lg will-change-transform" 
-            variant="outline"
+            className="btn-secondary-enhanced px-8 py-6 text-base"
           >
-            <Link href="/dashboard" prefetch={true}>Learn More</Link>
+            <Link href="/dashboard" prefetch={true}>
+              Explore Features
+            </Link>
           </Button>
+        </AdaptiveMotion>
+
+        {/* Hero Stats */}
+        <AdaptiveMotion
+          className="pt-8 md:pt-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
+            <div className="glass-card p-4 md:p-6">
+              <div className="text-3xl md:text-4xl font-bold text-gradient-primary">10K+</div>
+              <p className="text-sm md:text-base text-gray-300 mt-2">Users Empowered</p>
+            </div>
+            <div className="glass-card p-4 md:p-6">
+              <div className="text-3xl md:text-4xl font-bold text-gradient-primary">95%</div>
+              <p className="text-sm md:text-base text-gray-300 mt-2">Success Rate</p>
+            </div>
+            <div className="glass-card p-4 md:p-6">
+              <div className="text-3xl md:text-4xl font-bold text-gradient-primary">24/7</div>
+              <p className="text-sm md:text-base text-gray-300 mt-2">AI Support</p>
+            </div>
+          </div>
         </AdaptiveMotion>
       </div>
     </section>

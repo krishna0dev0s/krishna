@@ -19,11 +19,14 @@ export default function Home() {
       <section className="w-full py-16 md:py-28 lg:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">⚡ Growth Tools</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground leading-tight">
+            <div className="section-badge mb-6 inline-flex">
+              <Sparkles className="h-4 w-4 mr-2" />
+              Growth Tools
+            </div>
+            <h2 className="section-title-polished text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
               Powerful tools to accelerate your career
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
               Access all the resources you need in one place to master interviews and land your dream job
             </p>
           </div>
@@ -31,14 +34,14 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Build Resume */}
             <Link href="/resume">
-              <Card className="group h-full border border-muted/50 bg-background/60 backdrop-blur-sm hover:border-primary/50 hover:bg-background hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out rounded-2xl cursor-pointer">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <FileText className="h-8 w-8 text-primary" />
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
+                  <div className="icon-container-polished">
+                    <FileText className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight mb-2 text-foreground">Build Resume</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">Build Resume</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Create ATS-optimized resumes that stand out to recruiters
                     </p>
                   </div>
@@ -48,14 +51,14 @@ export default function Home() {
 
             {/* Cover Letter */}
             <Link href="/ai-cover-letter">
-              <Card className="group h-full border border-muted/50 bg-background/60 backdrop-blur-sm hover:border-primary/50 hover:bg-background hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out rounded-2xl cursor-pointer">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <PenTool className="h-8 w-8 text-primary" />
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
+                  <div className="icon-container-polished">
+                    <PenTool className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight mb-2 text-foreground">Cover Letter</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">Cover Letter</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Generate compelling cover letters tailored to each job
                     </p>
                   </div>
@@ -65,14 +68,14 @@ export default function Home() {
 
             {/* Interview Prep */}
             <Link href="/interview">
-              <Card className="group h-full border border-muted/50 bg-background/60 backdrop-blur-sm hover:border-primary/50 hover:bg-background hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out rounded-2xl cursor-pointer">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <GraduationCap className="h-8 w-8 text-primary" />
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
+                  <div className="icon-container-polished">
+                    <GraduationCap className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight mb-2 text-foreground">Interview Prep</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">Interview Prep</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Master behavioral and technical interview questions
                     </p>
                   </div>
@@ -82,14 +85,14 @@ export default function Home() {
 
             {/* Mock Interview Demo */}
             <Link href="/mock-interview-demo">
-              <Card className="group h-full border border-muted/50 bg-background/60 backdrop-blur-sm hover:border-primary/50 hover:bg-background hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out rounded-2xl cursor-pointer">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <GraduationCap className="h-8 w-8 text-primary" />
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
+                  <div className="icon-container-polished">
+                    <GraduationCap className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight mb-2 text-foreground">AI Mock Interviews</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">AI Mock Interviews</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Practice with AI and get instant feedback
                     </p>
                   </div>
@@ -99,14 +102,14 @@ export default function Home() {
 
             {/* Coding Practice */}
             <Link href="/leetcode">
-              <Card className="group h-full border border-muted/50 bg-background/60 backdrop-blur-sm hover:border-primary/50 hover:bg-background hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out rounded-2xl cursor-pointer">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <Code2 className="h-8 w-8 text-primary" />
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
+                  <div className="icon-container-polished">
+                    <Code2 className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight mb-2 text-foreground">Coding Practice</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">Coding Practice</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Solve coding problems and ace technical interviews
                     </p>
                   </div>
@@ -116,14 +119,14 @@ export default function Home() {
 
             {/* Roadmap */}
             <Link href="/roadmap">
-              <Card className="group h-full border border-muted/50 bg-background/60 backdrop-blur-sm hover:border-primary/50 hover:bg-background hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out rounded-2xl cursor-pointer">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <MapPin className="h-8 w-8 text-primary" />
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
+                  <div className="icon-container-polished">
+                    <MapPin className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight mb-2 text-foreground">Career Roadmap</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">Career Roadmap</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Get a personalized roadmap tailored to your goals
                     </p>
                   </div>
@@ -133,14 +136,14 @@ export default function Home() {
 
             {/* Learning Path */}
             <Link href="/learning-path">
-              <Card className="group h-full border border-muted/50 bg-background/60 backdrop-blur-sm hover:border-primary/50 hover:bg-background hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out rounded-2xl cursor-pointer">
-                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <Zap className="h-8 w-8 text-primary" />
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
+                  <div className="icon-container-polished">
+                    <Zap className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight mb-2 text-foreground">Learning Path</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">Learning Path</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Follow a structured learning path for skill development
                     </p>
                   </div>

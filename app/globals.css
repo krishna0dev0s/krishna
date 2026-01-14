@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./macos-26-theme.css";
+@import "./polished-ui.css";
 
 @custom-variant dark (&:is(.dark *));
 
