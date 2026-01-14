@@ -67,14 +67,6 @@ const Header = async() => {
         {/* Navigation & Auth */}
         <div className="flex items-center gap-4">
           <SignedIn>
-            {/* Modern Dashboard */}
-            <Link href="/dashboard/modern">
-              <Button variant="ghost" size="sm">
-                <Zap className="h-4 w-4 mr-2" />
-                <span className="hidden md:inline">Modern UI</span>
-              </Button>
-            </Link>
-
             {/* Dashboard */}
             <Link href="/dashboard">
               <Button variant="ghost" size="sm">
