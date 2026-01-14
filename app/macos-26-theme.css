@@ -1,0 +1,203 @@
+/* macOS 26 (Sequoia) Theme Styles */
+
+:root.theme-macos-26 {
+  /* Color palette - macOS Sequoia style */
+  --background: #0a0a0a;
+  --foreground: rgba(245, 245, 245, 0.98);
+  --card: rgba(30, 30, 30, 0.5);
+  --card-foreground: rgba(245, 245, 245, 0.95);
+  --popover: rgba(25, 25, 25, 0.8);
+  --popover-foreground: rgba(245, 245, 245, 0.98);
+  --primary: rgba(0, 122, 255, 1);
+  --primary-foreground: #ffffff;
+  --secondary: rgba(255, 255, 255, 0.08);
+  --secondary-foreground: rgba(245, 245, 245, 0.95);
+  --muted: rgba(255, 255, 255, 0.05);
+  --muted-foreground: rgba(255, 255, 255, 0.6);
+  --accent: rgba(0, 122, 255, 0.15);
+  --accent-foreground: rgba(0, 122, 255, 0.95);
+  --destructive: rgba(255, 59, 48, 0.9);
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.06);
+  --ring: rgba(0, 122, 255, 0.3);
+  --radius: 0.75rem;
+}
+
+.theme-macos-26 {
+  color-scheme: dark;
+}
+
+/* Glassmorphism effects for macOS 26 */
+.theme-macos-26 .glass-effect,
+.theme-macos-26 [class*="card"],
+.theme-macos-26 [class*="panel"] {
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-macos-26 .glass-effect-strong {
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Button styles for macOS 26 */
+.theme-macos-26 button:not([class*="icon"]) {
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.theme-macos-26 button:hover:not(:disabled) {
+  transform: scale(1.01);
+}
+
+.theme-macos-26 button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Input styles for macOS 26 */
+.theme-macos-26 input,
+.theme-macos-26 textarea,
+.theme-macos-26 select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.theme-macos-26 input:focus,
+.theme-macos-26 textarea:focus,
+.theme-macos-26 select:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 122, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* Card styles for macOS 26 */
+.theme-macos-26 [class*="card"] {
+  border-radius: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+/* Typography for macOS 26 */
+.theme-macos-26 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.theme-macos-26 h1,
+.theme-macos-26 h2,
+.theme-macos-26 h3,
+.theme-macos-26 h4,
+.theme-macos-26 h5,
+.theme-macos-26 h6 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.theme-macos-26 h1 {
+  font-size: 2rem;
+}
+
+.theme-macos-26 h2 {
+  font-size: 1.5rem;
+}
+
+.theme-macos-26 h3 {
+  font-size: 1.25rem;
+}
+
+/* Shadow effects for macOS 26 */
+.theme-macos-26 [class*="shadow"] {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+              0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styling for macOS 26 */
+.theme-macos-26 ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.theme-macos-26 ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.theme-macos-26 ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.theme-macos-26 ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+  background-clip: padding-box;
+}
+
+/* Link styles for macOS 26 */
+.theme-macos-26 a {
+  color: rgba(0, 122, 255, 1);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.theme-macos-26 a:hover {
+  opacity: 0.8;
+}
+
+.theme-macos-26 a:active {
+  opacity: 0.6;
+}
+
+/* Badge/Tag styles for macOS 26 */
+.theme-macos-26 [class*="badge"],
+.theme-macos-26 [class*="tag"] {
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 122, 255, 0.15);
+  color: rgba(0, 122, 255, 1);
+  border: 1px solid rgba(0, 122, 255, 0.3);
+}
+
+/* Divider styles for macOS 26 */
+.theme-macos-26 hr,
+.theme-macos-26 [class*="divider"] {
+  border-color: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Focus visible for macOS 26 (accessibility) */
+.theme-macos-26 *:focus-visible {
+  outline: 2px solid rgba(0, 122, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions throughout */
+.theme-macos-26 * {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Dark mode enhancements */
+.theme-macos-26.dark {
+  color-scheme: dark;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .theme-macos-26 .glass-effect,
+  .theme-macos-26 [class*="card"] {
+    -webkit-backdrop-filter: blur(20px);
+  }
+}

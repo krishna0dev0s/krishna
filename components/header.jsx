@@ -31,6 +31,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { checkUser } from "@/lib/checkUser";
+import { ThemeSwitcherButton } from "@/components/theme-switcher-button";
 
 const Header = async() => {
   try {
@@ -154,6 +155,9 @@ const Header = async() => {
               <Button variant="outline">Sign Up</Button>
             </SignUpButton>
           </SignedOut>
+
+          {/* Theme Switcher */}
+          <ThemeSwitcherButton />
 
           {/* User Avatar */}
           <SignedIn>
