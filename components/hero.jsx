@@ -63,7 +63,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="space-y-6 md:space-y-8 text-center container mx-auto px-4 relative z-10">
+      <div className="space-y-8 md:space-y-10 text-center container mx-auto px-4 relative z-10">
         {/* Badge */}
         <AdaptiveMotion 
           className="hero-content"
@@ -79,14 +79,14 @@ const HeroSection = () => {
 
         {/* Headline with enhanced animations */}
         <AdaptiveMotion 
-          className="hero-title space-y-3"
+          className="hero-title space-y-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight">
-            <span className="hero-title block">Welcome to WatshiBo</span>
-            <span className="text-gradient-primary block mt-2">Your Ultimate AI Career Companion</span>
+            <span className="hero-title block text-white">Welcome to WatshiBo</span>
+            <span className="text-gradient-primary block mt-3 md:mt-4">Your Ultimate AI Career Companion</span>
           </h1>
         </AdaptiveMotion>
           
@@ -96,7 +96,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p className="text-lg md:text-xl lg:text-2xl font-medium max-w-4xl mx-auto text-gray-200 leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl font-medium max-w-4xl mx-auto leading-relaxed">
             Master interviews, craft standout resumes, and tailor cover letters with 
             <span className="text-gradient-accent font-semibold"> intelligent automation</span>. 
             Your success starts here.
@@ -105,7 +105,7 @@ const HeroSection = () => {
 
         {/* CTA Buttons with enhanced animations */}
         <AdaptiveMotion
-          className="flex flex-col sm:flex-row justify-center gap-4 pt-4 md:pt-6 hero-buttons"
+          className="flex flex-col sm:flex-row justify-center gap-4 pt-6 md:pt-8 hero-buttons"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -133,12 +133,12 @@ const HeroSection = () => {
 
         {/* Hero Stats */}
         <AdaptiveMotion
-          className="pt-8 md:pt-12"
+          className="pt-12 md:pt-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto">
             <div className="glass-card p-4 md:p-6">
               <div className="text-3xl md:text-4xl font-bold text-gradient-primary">10K+</div>
               <p className="text-sm md:text-base text-gray-300 mt-2">Users Empowered</p>
