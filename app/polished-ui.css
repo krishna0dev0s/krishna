@@ -66,11 +66,17 @@
   overflow: hidden;
   background: linear-gradient(135deg, rgba(0, 122, 255, 1), rgba(0, 100, 255, 0.9));
   border: 1px solid rgba(0, 122, 255, 0.5);
-  color: white;
+  color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3), 0 0 20px rgba(0, 122, 255, 0.1);
+}
+
+.btn-primary-enhanced * {
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-primary-enhanced::before {
@@ -100,11 +106,17 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(245, 245, 245, 0.95);
+  color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
+}
+
+.btn-secondary-enhanced * {
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-secondary-enhanced:hover {
