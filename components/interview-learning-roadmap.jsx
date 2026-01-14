@@ -62,6 +62,11 @@ export function InterviewLearningRoadmap({ role = 'Software Engineer', company, 
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error(`Invalid response type: ${contentType}. Expected JSON`);
+      }
+
       const data = await response.json();
       console.log('[Component] Received data:', data);
 
@@ -99,6 +104,16 @@ export function InterviewLearningRoadmap({ role = 'Software Engineer', company, 
         })
       });
 
+      if (!response.ok) {
+        console.error('[Component] Video fetch error:', response.status);
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error(`Invalid response type: ${contentType}. Expected JSON`);
+      }
+
       const data = await response.json();
       console.log('[Component] Video response:', data);
 
@@ -113,7 +128,7 @@ export function InterviewLearningRoadmap({ role = 'Software Engineer', company, 
     } finally {
       setLoadingVideos(false);
     }
-  };
+  };;
 
   const handleTopicClick = (topic) => {
     setSelectedTopic(topic);
