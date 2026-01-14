@@ -32,10 +32,9 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className="w-full pt-16 pb-12 md:pt-24 md:pb-16 text-white relative overflow-hidden -mt-16 hero-gradient-bg">
-      {/* Enhanced Gradient Glows */}
-      <div className="hero-glow hero-glow-1"></div>
-      <div className="hero-glow hero-glow-2"></div>
+    <section className="w-full pt-16 pb-12 md:pt-24 md:pb-16 text-white relative overflow-hidden -mt-16 bg-gradient-to-b from-black via-black to-transparent">
+      {/* macOS Sequoia-style gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-transparent to-transparent opacity-40 pointer-events-none"></div>
 
       {/* PixelBlast Background - Optimized */}
       <div 

@@ -1,8 +1,11 @@
-/* Enhanced Polished UI Styles with Advanced Animations */
+/* Enhanced Polished UI Styles - macOS Sequoia Compatible */
 
-/* Hero Section Enhancements */
+/* Hero Section Enhancements - macOS Sequoia */
 .hero-gradient-bg {
-  background: linear-gradient(135deg, rgba(0, 122, 255, 0.15) 0%, rgba(138, 43, 226, 0.1) 50%, rgba(0, 122, 255, 0.05) 100%);
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(10, 10, 10, 0.98) 50%, 
+    rgba(0, 0, 0, 0.9) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -11,25 +14,25 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .hero-glow-1 {
   width: 300px;
   height: 300px;
-  background: rgba(0, 122, 255, 0.3);
+  background: rgba(0, 122, 255, 0.15);
   top: -100px;
   right: -100px;
-  animation: floatGlow 8s ease-in-out infinite;
+  animation: floatGlow 12s ease-in-out infinite;
 }
 
 .hero-glow-2 {
   width: 250px;
   height: 250px;
-  background: rgba(138, 43, 226, 0.25);
+  background: rgba(0, 122, 255, 0.1);
   bottom: -50px;
   left: 10%;
-  animation: floatGlow 10s ease-in-out infinite reverse;
+  animation: floatGlow 14s ease-in-out infinite reverse;
 }
 
 @keyframes floatGlow {
