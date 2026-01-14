@@ -1,8 +1,6 @@
 // Interview Learning Topics API - Returns structured learning roadmap
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
-
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -22,6 +20,7 @@ export async function POST(request) {
       );
     }
 
+    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const topicsPrompt = `Generate a structured learning roadmap for a ${level || 'intermediate'} ${role || 'Software Engineer'} interview preparation.
 
@@ -83,16 +82,29 @@ Generate 7 progressive topics.`;
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {
-    console.error('[Learning Topics] Error:', error.message);
-    // Always return fallback roadmap on error
-    const fallbackRoadmap = generateFallbackRoadmap('Software Engineer', 'intermediate');
-    return new Response(
-      JSON.stringify({
-        success: true,
-        data: fallbackRoadmap
-      }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
-    );
+    console.error('[Learning Topics] Error:', error?.message || error);
+    console.error('[Learning Topics] Error stack:', error?.stack || 'No stack');
+    try {
+      // Always return fallback roadmap on error
+      const fallbackRoadmap = generateFallbackRoadmap('Software Engineer', 'intermediate');
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: fallbackRoadmap
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
+    } catch (finalError) {
+      console.error('[Learning Topics] Final error:', finalError);
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Failed to generate learning roadmap',
+          data: generateFallbackRoadmap('Software Engineer', 'intermediate')
+        }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
   }
 }
 
