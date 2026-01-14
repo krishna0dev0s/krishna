@@ -63,20 +63,22 @@
 /* Advanced Button Styles */
 .btn-primary-enhanced {
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 122, 255, 1), rgba(0, 100, 255, 0.9));
+  overflow: visible !important;
+  background: linear-gradient(135deg, rgba(0, 122, 255, 1), rgba(0, 100, 255, 0.9)) !important;
   border: 1px solid rgba(0, 122, 255, 0.5);
-  color: #ffffff;
-  font-weight: 600;
+  color: #ffffff !important;
+  font-weight: 600 !important;
   letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3), 0 0 20px rgba(0, 122, 255, 0.1);
 }
 
+.btn-primary-enhanced a,
+.btn-primary-enhanced span,
 .btn-primary-enhanced * {
-  color: #ffffff;
+  color: #ffffff !important;
   position: relative;
-  z-index: 2;
+  z-index: 2 !important;
 }
 
 .btn-primary-enhanced::before {
@@ -103,20 +105,22 @@
 
 .btn-secondary-enhanced {
   position: relative;
-  overflow: hidden;
+  overflow: visible !important;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  font-weight: 600;
+  color: #ffffff !important;
+  font-weight: 600 !important;
   letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
 }
 
+.btn-secondary-enhanced a,
+.btn-secondary-enhanced span,
 .btn-secondary-enhanced * {
-  color: #ffffff;
+  color: #ffffff !important;
   position: relative;
-  z-index: 2;
+  z-index: 2 !important;
 }
 
 .btn-secondary-enhanced:hover {
