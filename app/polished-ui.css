@@ -1,5 +1,455 @@
 /* Enhanced Polished UI Styles with Advanced Animations */
 
+/* Accessibility: Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   1. MICROINTERACTIONS (UI Animations)
+   ============================================ */
+
+/* Button Microinteractions */
+.micro-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.micro-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.micro-button:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Toggle Switch Animation */
+.toggle-animated {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-animated input {
+  appearance: none;
+  width: 50px;
+  height: 28px;
+  background: #ccc;
+  border-radius: 14px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.toggle-animated input::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-animated input:checked {
+  background: #3b82f6;
+}
+
+.toggle-animated input:checked::after {
+  left: 24px;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Loading Spinner */
+.spinner-animated {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(59, 130, 246, 0.2);
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spinnerRotate 1s linear infinite;
+}
+
+@keyframes spinnerRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   2. PAGE TRANSITION EFFECTS
+   ============================================ */
+
+/* Page Fade In */
+.page-fade-in {
+  animation: pageFadeIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Page Slide In */
+.page-slide-in {
+  animation: pageSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Morph Transition */
+.page-morph {
+  animation: pageMorph 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pageMorph {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ============================================
+   3. SCROLLYTELLING (Scroll-Triggered Animations)
+   ============================================ */
+
+/* Parallax Effect */
+.parallax-element {
+  position: relative;
+  will-change: transform;
+}
+
+/* Scroll Reveal - Fade In */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll Reveal - Slide From Left */
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scroll-reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scroll Reveal - Slide From Right */
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scroll-reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Progressive Reveal */
+.progressive-reveal {
+  animation: progressiveReveal 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes progressiveReveal {
+  0% {
+    opacity: 0;
+    background-position: 200% center;
+  }
+  100% {
+    opacity: 1;
+    background-position: 0% center;
+  }
+}
+
+/* ============================================
+   4. EXPRESSIVE TYPOGRAPHY
+   ============================================ */
+
+/* Kinetic Typography - Fade In Words */
+.kinetic-text {
+  opacity: 0;
+  animation: kineticFadeIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes kineticFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Morphing Text Effect */
+.morphing-text {
+  display: inline-block;
+  animation: morphingSlide 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #3b82f6);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes morphingSlide {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* Self-Drawing Text */
+.self-drawing-text {
+  font-weight: 700;
+  background: linear-gradient(to right, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textDraw 2.5s ease-in-out forwards;
+}
+
+@keyframes textDraw {
+  0% {
+    background-size: 0% 100%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+/* Text Pulse */
+.text-pulse {
+  animation: textPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 0px rgba(59, 130, 246, 0);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* ============================================
+   5. AMBIENT BACKGROUND MOTION
+   ============================================ */
+
+/* Animated Gradient Background */
+.ambient-gradient {
+  background: linear-gradient(
+    -45deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 92, 246, 0.1),
+    rgba(59, 130, 246, 0.05)
+  );
+  background-size: 400% 400%;
+  animation: ambientGradient 15s ease infinite;
+}
+
+@keyframes ambientGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating Particles */
+.floating-particle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  opacity: 0.5;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Wave Background */
+.wave-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: url('data:image/svg+xml,...') repeat-x;
+  animation: wave 15s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* ============================================
+   6. ANIMATED ICONS & LOGOS
+   ============================================ */
+
+/* Icon Bounce */
+.icon-bounce {
+  animation: iconBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Icon Pulse */
+.icon-pulse {
+  animation: iconPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Icon Rotate */
+.icon-rotate {
+  animation: iconRotate 3s linear infinite;
+}
+
+@keyframes iconRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icon Hover Glow */
+.icon-hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-hover-glow:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Logo Morph */
+.logo-morph {
+  animation: logoMorph 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+@keyframes logoMorph {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+}
+
+/* ============================================
+   HERO SECTION ENHANCEMENTS (EXISTING)
+   ============================================ */
+
 /* Hero Section Enhancements */
 .hero-gradient-bg {
   background: linear-gradient(135deg, rgba(0, 122, 255, 0.15) 0%, rgba(138, 43, 226, 0.1) 50%, rgba(0, 122, 255, 0.05) 100%);

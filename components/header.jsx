@@ -103,7 +103,7 @@ const Header = async() => {
                 {/* Header Section */}
                 <div className="px-6 py-4 border-b border-border/50">
                   <div className="flex items-center gap-2 mb-1">
-                    <StarsIcon className="h-5 w-5 text-primary" />
+                    <StarsIcon className="h-5 w-5 text-primary icon-pulse" />
                     <DropdownMenuLabel className="text-sm font-bold uppercase tracking-wider text-foreground">
                       Growth Tools
                     </DropdownMenuLabel>

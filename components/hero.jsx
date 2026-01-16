@@ -85,8 +85,8 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight">
-            <span className="hero-title block text-white">Welcome to WatshiBo</span>
-            <span className="text-gradient-primary block mt-3 md:mt-4">Your Ultimate AI Career Companion</span>
+            <span className="hero-title block text-white kinetic-text">Welcome to WatshiBo</span>
+            <span className="text-gradient-primary block mt-3 md:mt-4 morphing-text">Your Ultimate AI Career Companion</span>
           </h1>
         </AdaptiveMotion>
           
