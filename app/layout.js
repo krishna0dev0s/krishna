@@ -9,6 +9,7 @@ import { dark } from '@clerk/themes';
 import { Toaster } from "@/components/ui/sonner";
 import PixelBlastBg from "@/components/PixelBlastBg";
 import { ClerkTimeoutHandler } from "@/components/clerk-timeout-handler";
+import { AnimationProvider } from "@/components/animation-provider";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -54,23 +55,25 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
             <MacOSThemeProvider defaultTheme="macos-26">
-              <ClerkTimeoutHandler />
-              <PixelBlastBg />
-              <div className="relative z-0">
-                <div className="fixed top-0 left-0 right-0 z-50 bg-background/30 backdrop-blur-[6px] shadow-lg border-b border-white/10 contain-paint">
-                  <Header />
+              <AnimationProvider>
+                <ClerkTimeoutHandler />
+                <PixelBlastBg />
+                <div className="relative z-0">
+                  <div className="fixed top-0 left-0 right-0 z-50 bg-background/30 backdrop-blur-[6px] shadow-lg border-b border-white/10 contain-paint">
+                    <Header />
+                  </div>
+                  <main className="min-h-screen pt-01">{children}</main>
+                  <footer className="text-center py-4 text-sm text-muted-foreground relative z-10">
+                    made with ❤️ by krishna gupta
+                  </footer>
                 </div>
-                <main className="min-h-screen pt-01">{children}</main>
-                <footer className="text-center py-4 text-sm text-muted-foreground relative z-10">
-                  made with ❤️ by krishna gupta
-                </footer>
-              </div>
-              <Toaster 
-                position="top-center"
-                expand={true}
-                richColors
-                closeButton
-              />
+                <Toaster 
+                  position="top-center"
+                  expand={true}
+                  richColors
+                  closeButton
+                />
+              </AnimationProvider>
             </MacOSThemeProvider>
           </ThemeProvider>
         </body>

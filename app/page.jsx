@@ -16,17 +16,17 @@ export default function Home() {
       <HeroSection />
 
       {/* Growth Tools Section */}
-      <section className="w-full py-16 md:py-28 lg:py-32 bg-background">
+      <section className="w-full py-16 md:py-28 lg:py-32 bg-background scroll-reveal">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <div className="section-badge mb-6 inline-flex">
-              <Sparkles className="h-4 w-4 mr-2" />
+          <div className="text-center max-w-4xl mx-auto mb-16 scroll-reveal-left">
+            <div className="section-badge mb-6 inline-flex icon-bounce">
+              <Sparkles className="h-4 w-4 mr-2 icon-pulse" />
               Growth Tools
             </div>
-            <h2 className="section-title-polished text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            <h2 className="section-title-polished text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight morphing-text">
               Powerful tools to accelerate your career
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium kinetic-text">
               Access all the resources you need in one place to master interviews and land your dream job
             </p>
           </div>
@@ -34,13 +34,13 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Build Resume */}
             <Link href="/resume">
-              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden">
+              <Card className="card-polished group h-full hover-lift cursor-pointer rounded-xl overflow-hidden scroll-reveal scroll-reveal-left">
                 <CardContent className="p-8 flex flex-col items-center text-center h-full justify-center gap-5">
-                  <div className="icon-container-polished">
-                    <FileText className="h-7 w-7 text-primary" />
+                  <div className="icon-container-polished icon-hover-glow">
+                    <FileText className="h-7 w-7 text-primary icon-pulse" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-lg font-bold tracking-tight text-foreground">Build Resume</h3>
+                    <h3 className="text-lg font-bold tracking-tight text-foreground kinetic-text">Build Resume</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                       Create ATS-optimized resumes that stand out to recruiters
                     </p>
